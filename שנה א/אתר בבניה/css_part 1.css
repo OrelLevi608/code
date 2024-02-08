@@ -1,0 +1,952 @@
+  /* במסכים ברוחב 992 פיקסלים או פחות, צבע הרקע ישתנה */ 
+  @media only screen and (max-width: 4000px)
+  {
+   body
+    {
+      background-color: white;
+    }
+  } 
+ 
+ 
+ /* במסכים ברוחב 600 פיקסלים או פחות, צבע הרקע הוא זית */ 
+ @media only screen and (max-height: 4000px)
+ {
+  body
+   {
+     background-color: white;
+   }
+ } 
+ 
+ 
+ /*----------------------------------------------------------------------------------------------------------------*/
+
+ 
+ /* התחלת קוד */
+ /* Dropdown Navbar תפריט  */
+
+ body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ /* מעוברים לצד ימין Login Sign Up */
+ #right_Login_Sign_Up{
+  float: right;
+ }
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* dropdown תפריטים נפתחים */
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+ .navbar a.active {
+   background-color: #2196F3;
+   color: white;
+ }
+
+.navbar .search-container {
+   float: right;
+ }
+
+
+ .navbar input[type=text] {
+   padding: 6px;
+   margin-top: 8px;
+   font-size: 17px;
+   border: none;
+ }
+
+
+ .navbar .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+ .navbar .search-container button:hover {
+   background: #b52f2f;
+ }
+ 
+
+ @media screen and (max-width: 600px) {
+   .navbar .search-container {
+     float: none;
+   }
+   .navbar a, .navbar input[type=text], .navbar .search-container button {
+     float: none;
+     display: block;
+     text-align: left;
+     width: 100%;
+     margin: 0;
+     padding: 14px;
+   }
+   .navbar input[type=text] {
+     border: 1px solid #ccc;  
+   }
+ }
+
+ .cart_Imge{
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5px;
+  border-radius: 3px;
+  width: 50px;     
+}
+
+  /* סוף הקוד של תפריט */
+
+/*----------------------------------------------------------------------------------------------------------------*/
+  
+   /* התחלת קוד */
+ /* Sign Up  תפריט  */
+  
+
+ body {font-family: Arial, Helvetica, sans-serif;}
+  /* * {box-sizing: border-box;}  */
+  
+ /* שדות קלט ברוחב מלא */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* להוסיף צבע רקע כאשר הקלט מקבל מיקוד */
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* הגדרה של סגנון לכל הכפתורים */
+  #button_Sign_Up {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  #button_Sign_Up:hover {
+    opacity:1;
+  }
+  
+  /* סגנונות נוספים עבור כפתור הביטול */
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+
+  .signupbtn {
+    padding: 14px 20px;
+    background-color: #5ff436;
+  }
+  
+  /* לצוף לחצני ביטול והרשמה ולהוסיף רוחב שווה */
+  .cancelbtn, #button_Sign_Up {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Add padding to container  */
+  .container {
+    padding: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal_Sign_Up {
+    display: none; /* מוסתר כברירת מחדל */
+    position: fixed; /* הישאר במקום */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* רוחב מלא */
+    height: 100%; /* גובה מלא */
+    overflow: auto; /* אפשר גלילה במידת הצורך */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content_Sign_Up {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;  /* מלמעלה 5% , 15% מלמטה ובמרכז */
+    border: 1px solid #888;
+    width: 80%; /* יכול להיות פחות או יותר, תלוי בגודל המסך */
+  }
+  
+  /* Style the horizontal ruler */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+   
+  /* כפתור הסגירה  */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* שנה סגנונות עבור כפתור ביטול וכפתור הרשמה במסכים קטנים במיוחד */
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+  }
+
+
+
+/* סוף הקוד של תפריט */
+
+/*----------------------------------------------------------------------------------------------------------------*/
+  
+  
+  
+   /* התחלת קוד */
+ /* Login  תפריט  */
+  
+
+ body {font-family: Arial, Helvetica, sans-serif;}
+
+ /* שדות קלט ברוחב מלא */
+ input[type=text], input[type=password] {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+ } 
+ 
+ /* להגדיר סגנון לכל הכפתורים */
+   #button_Login {
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+ }
+
+ #button_Login:hover {
+   opacity: 0.8;
+ }
+
+ .but_Login {
+  background-color: #04AA6D;
+ }
+ 
+ /* סגנונות נוספים עבור כפתור הביטול */
+ .cancelbtn_Login {
+   width: auto;
+   padding: 10px 18px;
+   background-color: #f44336;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+ }
+
+ #cancelbtn_Login:hover {
+  opacity: 0.8;
+ }
+ 
+ /* מרכז את התמונה ומקם את לחצן הסגירה */
+ .imgcontainer {
+   text-align: center;
+   margin: 24px 0 12px 0;
+   position: relative;
+ }
+ 
+ img.avatar {
+   width: 15%;
+   border-radius: 50%;
+ }
+ 
+ .container_Login {
+   padding: 16px;
+ }
+ 
+ span.psw {
+   float: right;
+   padding-top: 16px;
+ }
+ 
+ /* The Modal (background) */
+ .modal_Login {
+   display: none; /* מוסתר כברירת מחדל */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* אפשר גלילה במידת הצורך */
+   background-color: rgb(0,0,0); 
+   background-color: rgba(0,0,0,0.4); 
+   padding-top: 60px;
+ }
+ 
+ /* Modal תוכן/תיבה */
+ .modal-content_Login {
+   background-color: #fefefe;
+   margin: 5% auto 15% auto; /* מלמעלה 5% , 15% מלמטה ובמרכז */
+   border: 1px solid #888;
+   width: 40%; /* יכול להיות פחות או יותר, תלוי בגודל המסך */
+ }
+ 
+ /* The Close Button */
+ .close {
+   position: absolute;
+   right: 25px;
+   top: 0;
+   color: #000;
+   font-size: 35px;
+   font-weight: bold;
+ }
+ 
+ .close:hover,
+ .close:focus {
+   color: red;
+   cursor: pointer;
+ }
+ 
+ /* להוסיף אנימציית זום */
+ .animate {
+   -webkit-animation: animatezoom 0.6s;
+   animation: animatezoom 0.6s
+ }
+ 
+ @-webkit-keyframes animatezoom {
+   from {-webkit-transform: scale(0)} 
+   to {-webkit-transform: scale(1)}
+ }
+   
+ @keyframes animatezoom {
+   from {transform: scale(0)} 
+   to {transform: scale(1)}
+ }
+ 
+ /* שנה סגנונות עבור כפתור span וביטול במסכים קטנים במיוחד */
+ @media screen and (max-width: 300px) {
+   span.psw {
+      display: block;
+      float: none;
+   }
+   .cancelbtn {
+      width: 100%;
+   }
+ }
+
+
+/* סוף הקוד של תפריט */
+
+/*----------------------------------------------------------------------------------------------------------------*/
+  
+  
+  
+  
+   /* Dropdown Navbar התחלת קוד של סל הקניות שנמצא בתוך התפריט */
+ /* cart in header */
+  
+
+/* Set a style for all buttons */
+#button_Cart_Header{
+  background-color: #e04503;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+#button_Cart_Header:hover {
+  opacity:1;
+}
+
+/* סגנונות נוספים עבור כפתור הביטול */
+.cancel_button_cart {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* לצוף לחצני ביטול והרשמה ולהוסיף רוחב שווה */
+.cancel_button_cart, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container_Cart_1 {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal_Cart {
+  display: none; /* מוסתר כברירת מחדל */
+  position: fixed; /* הישאר במקום */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* אפשר גלילה במידת הצורך*/
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content_Cart {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* מלמעלה 5% , 15% מלמטה ובמרכז */
+  border: 1px solid #888;
+  width: 80%; /* יכול להיות פחות או יותר, תלוי בגודל המסך */
+}
+
+/* סגננן של הסרגל האופקי */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* כפתור הסגירה */
+.close_Cart {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close_Cart:hover,
+.close_Cart:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* שנה סגנונות עבור כפתור ביטול וכפתור הרשמה במסכים קטנים במיוחד */
+@media screen and (max-width: 300px) {
+  .cancel_button_cart, .signupbtn {
+     width: 100%;
+  }
+}
+
+
+
+/* סוף הקוד של תפריט */
+
+/*----------------------------------------------------------------------------------------------------------------*/
+ 
+
+
+
+ /* התחלת קוד */
+/* כרטיסיות של מוצרים באתר */
+
+#hatsContainer {
+  display: flex; /* זו ברירת המחדל של פלקס - קו אופקי לצד ימין */
+  flex-wrap: wrap;  /* דואג להוריד חלק מהשורה לשורה חדשה ובכך הכל יוצג כמו שצריך לפי הפיקסלים שנצטרך wrap אם אין מקום בשורה ויש עוד מה להציג אז הפרופרטיז  */
+  margin-right: 0%;
+  margin-left: 6%;
+  background-color:white;
+}
+
+#tShirtsContainer {
+  display: flex; /* זו ברירת המחדל של פלקס - קו אופקי לצד ימין */
+  flex-wrap: wrap;  /* דואג להוריד חלק מהשורה לשורה חדשה ובכך הכל יוצג כמו שצריך לפי הפיקסלים שנצטרך wrap אם אין מקום בשורה ויש עוד מה להציג אז הפרופרטיז  */
+  margin-right: 0%;
+  margin-left: 6%;
+  background-color:white;
+}
+
+#bermudasContainer {
+  display: flex; /* זו ברירת המחדל של פלקס - קו אופקי לצד ימין */
+  flex-wrap: wrap;  /* דואג להוריד חלק מהשורה לשורה חדשה ובכך הכל יוצג כמו שצריך לפי הפיקסלים שנצטרך wrap אם אין מקום בשורה ויש עוד מה להציג אז הפרופרטיז  */
+  margin-right: 0%;
+  margin-left: 6%;
+  background-color:white;
+}
+
+#shoesContainer {
+  display: flex; /* זו ברירת המחדל של פלקס - קו אופקי לצד ימין */
+  flex-wrap: wrap;  /* דואג להוריד חלק מהשורה לשורה חדשה ובכך הכל יוצג כמו שצריך לפי הפיקסלים שנצטרך wrap אם אין מקום בשורה ויש עוד מה להציג אז הפרופרטיז  */
+  margin-right: 0%;
+  margin-left: 6%;
+  background-color:white;
+}
+
+.product-area {
+  box-shadow: 0 30px 30px 0px rgba(162, 163, 195, 0.2);
+  border-radius: 25px 25px 25px 25px;
+  transition: 1000ms; /* זמן השייה לעיגול כולל הצבע שהוגדר */
+  justify-content: center; /* מיישר את האובייקט */  /* חובה */
+  justify-items: center;  /* מיישר את האובייקט */  /* חוב ה */
+  width: 204px; /* רוחב העיגול שעוטף את התמונה יחד עם הכפתורים */
+  height: 15%;
+  margin: 10px;
+  padding: 50px;
+}
+
+.product-area:hover {
+  margin: 20px;
+  transition: 300ms; /* זמן השייה לעיגול כולל הצבע שהוגדר */
+  transform:scale(0.9.1); /* ריחוף מעל התמונה עם העכבר יוצר אלמנט של תמונה קצת מרחפת ויוצאת מהמקום קצת */ 
+  box-shadow: 0 80px 50px 10px rgba(18, 18, 19, 0.2);
+  border-radius: 10px 10px 10px 10px;
+ }
+
+/* .header-img{
+
+}
+
+.description-img{
+
+} */
+
+.img-picture { /* תמונה */
+   border-radius: 500px 500px 500px 500px; /*   משנה לעיגול מעגל פינות של התמונה --  שינוי הצורה של התמונה */
+   width: 100%;
+   height: 80%;
+}
+
+/* תמונה משנה צד */
+.img-picture:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.price {  /* מחיר */
+ color: darkorange;
+}
+
+.button-add-to-cart {  /* כפתור */
+width: 150px;
+height: 50px;
+font-size: 20px; /* גודל טקסט/הכתב */
+padding: 5px; /* הרווח בין הכיתוב שבתוך הכפתור לבין המסגרת שבתוך הכפתור */
+margin: 6px; /* הרווח בין כפתור לכפתור */
+border-radius: 6px;
+background-color: goldenrod;
+}
+
+.button-add-to-cart:hover{
+  background-color: #333;
+}
+
+.button-remove-from-cart{
+width: 150px;
+height: 50px;
+font-size: 20px; /* גודל הכתב */
+padding: 5px; /* הרווח בין הכיתוב שבתוך הכפתור לבין המסגרת שבתוך הכפתור */
+margin: 6px; /* הרווח בין כפתור לכפתור */
+border-radius: 6px;
+background-color: goldenrod;
+}
+
+.button-remove-from-cart:hover{
+  background-color: #333;
+}
+
+
+/* סוף קוד */
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+#Boundary_line {
+  border: 15px solid rgba(18, 27, 202, 0.2);
+  border-radius: 10px;
+}
+#Enter_message {
+  font-size: 30px;
+  border: 50px solid rgba(76, 194, 90, 0.2);
+}
+
+#Customer_response {
+  border: 50px solid rgba(202, 18, 165, 0.3);
+}
+
+#club_member {
+  
+  background-color: rgba(79, 79, 81, 0.1);
+  border-radius: 30px;
+  display: inline-block;  /* מקטין את המסגרת לפי אורך הטקסט */
+  margin:50;
+}
+#message {
+  margin:1px; /* מצמיד את הפסקאות */
+  text-align: left; /* מזיז צד */
+}
+
+#Service_customer {
+  background-color: blue;
+}
+
+
+
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* Cart */
+/* תחילת קוד חיצוני של סל הקניות */
+
+#mainCart{
+  float: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(36, 33, 27);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.containerCart{
+  display: flex;
+  width: 70%;
+  margin-bottom: 30px;
+}
+
+.root{
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.sideber{  /* My cart  קשור ל */
+  width: 120%; /* הרוחב של הצבע האפור */
+  height: auto;
+  border-radius: 10px;
+  background-color: #eee;
+  margin-left: -62px; /* צידוד */
+  margin-top: 15px;
+  padding: 15px;
+  text-align: center;
+
+  box-sizing: border-box;
+  font-family:  'poppins', sans-serif;
+  font-size: 18px;
+  padding-right: 50px;
+  
+}
+
+.head{
+  background-color: goldenrod;
+  border-radius: 3px;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: white;
+  display: flex;  /* מזיז לצד שמאל */
+  align-items: center;
+}
+
+/* רוחב הקוביה שעוטפת את התמונה ואת התיאור + המחיר + הכמות */
+.cart-items{
+  display:contents;
+}
+
+.cart-items .cart-item:nth-child(even){
+  background-color: #eee1;
+}
+
+.cart-item{
+  display:contents;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(162, 154, 154);
+  border-bottom: 1px solid #b40e0e;
+  border-radius: 10px;
+  margin: 10px 10px;
+  width: auto;
+}
+
+.image_In_Cart{
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #aaa;
+  border-radius: 3px;
+  margin: 10px 10px;
+  width: 20%;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px; /* גודל פונט נוח לקריאה */
+}
+
+.minus, .plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: #f2f2f2; /* צבע רקע שקט ונקי */
+  color: #333; /* צבע הטקסט */
+  border: none;
+  cursor: pointer;
+  width: 30px; /* רוחב הלחצן */
+  height: 30px; /* גובה הלחצן */
+  border-radius: 15px; /* עיגול הקצוות */
+  font-size: 18px; /* גודל הפונט של הסימן */
+  margin: 0 5px; /* מרווחים סביב הלחצן */
+}
+
+.minus:hover, .plus:hover {
+  background-color: #e0e0e0; /* צבע רקע מעט כהה יותר בעת העברת העכבר */
+  transform: scale(1.1); /* הגדלה קלה של הלחצן בעת העברת העכבר */
+}
+
+.minus:active, .plus:active {
+  background-color: #cacaca; /* צבע רקע עמוק יותר בעת לחיצה */
+  transform: scale(0.9); /* הקטנה קלה של הלחצן בעת לחיצה */
+}
+
+.trash {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: #f2f2f2; /* צבע רקע שקט ונקי */
+  color: #333; /* צבע הטקסט */
+  border: none;
+  cursor: pointer;
+  width: 30px; /* רוחב הלחצן */
+  height: 30px; /* גובה הלחצן */
+  border-radius: 15px; /* עיגול הקצוות */
+  font-size: 18px; /* גודל הפונט של הסימן */
+  margin: 0 5px; /* מרווחים סביב הלחצן */
+}
+
+.trash:hover {
+  opacity: 0.7; /* שינוי השקיפות בעת העברת העכבר */
+  transform: scale(1.1); /* הגדלת האיקון בעת העברת העכבר */
+}
+
+.trash:active {
+  opacity: 0.5; /* שינוי שקיפות נוסף בעת לחיצה */
+  transform: scale(0.9); /* הקטנת האיקון בעת לחיצה */
+}
+
+.foot{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+  padding: 10px 0px;
+  border-top: 1px solid #333; /* יוצר קו */
+}
+
+#payment-method {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#payment-method h3 {
+  margin-bottom: 15px;
+}
+
+#payment-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#payment-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#payment-form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#payment-form button[type="submit"] {
+  grid-column: span 2;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#payment-form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+/* סיום קוד חיצוני של סל הקניות */
+
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+
+section#club_member {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+section#club_member h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+section#club_member p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+section#club_member a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#club_member_tm {
+  font-style: italic;
+  color: #333;
+}
+
+nav {
+  text-align: center;
+  margin: 20px;
+}
+
+nav .service-customer {
+  color: #333;
+  margin: 10px 0;
+}
+
+nav hr {
+  width: 80%;
+  border-top: 1px solid #ccc;
+}
+
+
+
+
+
+
+
+
+
